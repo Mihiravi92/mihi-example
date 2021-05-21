@@ -66,6 +66,12 @@ session info= for reproducability
 sessionInfo()
 ```
 
+```{r very new modification}
+PlantGrowth$group
+ctrl<- subset(PlantGrowth,group=="ctrl")
+head(ctrl)
+str(ctrl)
+```
 
 
 
