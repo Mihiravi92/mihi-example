@@ -1,0 +1,71 @@
+---
+title: "Prac 3"
+author: "Mihiravi"
+date: "21/05/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+```{r PlantGrowth}
+
+head(PlantGrowth)
+str(PlantGrowth)
+```
+
+```{r}
+PlantGrowth$group
+ctrl<- subset(PlantGrowth,group=="ctrl")
+head(ctrl)
+str(ctrl)
+trt1 <- subset(PlantGrowth,group=="trt1")
+head(trt1)
+str(trt1)
+trt2 <- subset(PlantGrowth,group=="trt2")
+head(trt2)
+str(trt2)
+```
+
+```{r summary}
+summary(ctrl)
+summary(trt1)
+summary(trt2)
+```
+
+
+
+```{r plots 2}
+boxplot(ctrl$weight, 
+        ylab="measurement",
+        main= "plot of the weight of control group")
+      
+```
+
+```{r plots 1}
+boxplot(ctrl$weight, trt1$weight, trt2$weight,
+        ylab="measurement",
+        main= "plot of the weight of control group ")
+```
+
+```{r plots 3}
+boxplot(ctrl$weight, trt1$weight, trt2$weight,
+        names=c("ctrl", "trt1", "trt2"),
+        ylab="measurement",
+        main= "plot of the weight of control group ")
+```
+
+session info= for reproducability
+```{r session info}
+sessionInfo()
+```
+
+
+
+
